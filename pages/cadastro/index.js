@@ -1,12 +1,5 @@
 import { useState } from "react";
-import {
-  TextField,
-  Button,
-  Alert,
-  CircularProgress,
-  Typography,
-  Box,
-} from "@mui/material";
+import { Alert, Box } from "@mui/material";
 import styles from "../../styles/cadastro.module.css";
 
 export default function Cadastro() {
@@ -17,7 +10,7 @@ export default function Cadastro() {
     confirmPassword: "",
   });
   const [status, setStatus] = useState({ type: "", message: "" });
-  const [isLoading, setIsLoading] = useState(false);
+  const [setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -69,10 +62,7 @@ export default function Cadastro() {
   return (
     <div className={styles.container}>
       <Box className={styles.boxFormulario}>
-        <Typography variant="h5" className={styles.titulo}>
-          Criar Conta
-        </Typography>
-
+        <h5 className={styles.titulo}>Criar Conta</h5>
         {status.message && (
           <Alert severity={status.type} sx={{ mb: 2 }}>
             {status.message}
@@ -80,39 +70,36 @@ export default function Cadastro() {
         )}
 
         <form onSubmit={handleSubmit}>
-          <TextField
-            fullWidth
-            margin="normal"
-            label="Nome"
+          <input
+            placeholder="Nome Completo"
+            className={styles.input}
             name="nome"
             value={formData.nome}
             onChange={handleChange}
             required
           />
-          <TextField
-            fullWidth
-            margin="normal"
-            label="E-mail"
+
+          <input
+            placeholder="Email"
+            className={styles.input}
             name="email"
             type="email"
             value={formData.email}
             onChange={handleChange}
             required
           />
-          <TextField
-            fullWidth
-            margin="normal"
-            label="Senha"
+          <input
+            placeholder="Senha"
+            className={styles.input}
             name="password"
             type="password"
             value={formData.password}
             onChange={handleChange}
             required
           />
-          <TextField
-            fullWidth
-            margin="normal"
-            label="Confirmar Senha"
+          <input
+            placeholder="Confirmar Senha"
+            className={styles.input}
             name="confirmPassword"
             type="password"
             value={formData.confirmPassword}
@@ -120,20 +107,13 @@ export default function Cadastro() {
             required
           />
 
-          <Button
-            fullWidth
-            variant="contained"
-            type="submit"
-            disabled={isLoading}
-            sx={{ mt: 3 }}
-          >
-            {isLoading ? (
-              <CircularProgress size={24} color="inherit" />
-            ) : (
-              "Cadastrar"
-            )}
-          </Button>
+          <button className={styles.button} type="submit">
+            Cadastrar
+          </button>
         </form>
+        <a className={styles.ancoralogin} href="/">
+          Já tem conta?
+        </a>
       </Box>
     </div>
   );
