@@ -10,7 +10,7 @@ export default function Cadastro() {
     confirmPassword: "",
   });
   const [status, setStatus] = useState({ type: "", message: "" });
-  const [setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
