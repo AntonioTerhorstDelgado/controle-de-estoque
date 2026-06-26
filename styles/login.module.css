@@ -16,7 +16,7 @@
   box-sizing: border-box;
 }
 
-.button {
+.Button {
   width: 100%;
   padding: 12px;
   margin-top: 16px;
@@ -30,7 +30,12 @@
   transition: background-color 0.3s;
 }
 
-.ancoralogin {
+.div {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.ancora {
   text-align: center;
   text-decoration: none;
   padding: 12px;
@@ -44,11 +49,11 @@
   transition: background-color 0.3s;
 }
 
-.ancoralogin:hover {
+.ancora:hover {
   background-color: #022144;
 }
 
-.button:hover {
+.Button:hover {
   background-color: #022144;
 }
 
@@ -67,6 +72,6 @@
 .titulo {
   text-align: center;
   color: #333;
-  margin-bottom: 8px;
+  margin-bottom: 1rem;
   font-size: 2.5rem;
 }
